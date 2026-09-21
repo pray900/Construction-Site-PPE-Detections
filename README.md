@@ -13,11 +13,11 @@ All three models were trained and evaluated on the same splits
 (17,248 train / 2,438 val / 2,455 test images). Figures below are the held-out
 **test** set.
 
-| Model | mAP@0.5 | mAP@0.5:0.95 | Precision | Recall | Weights |
-|---|---|---|---|---|---|
-| YOLOv5n | 0.895 | 0.548 | 0.889 | 0.845 | 5 MB |
-| **YOLOv8s** | **0.898** | **0.559** | **0.894** | **0.857** | 22 MB |
-| RT-DETR | 0.867 | 0.518 | 0.873 | 0.843 | 63 MB |
+| Model       | mAP@0.5   | mAP@0.5:0.95 | Precision | Recall    | Weights |
+| ----------- | --------- | ------------ | --------- | --------- | ------- |
+| YOLOv5n     | 0.895     | 0.548        | 0.889     | 0.845     | 5 MB    |
+| **YOLOv8s** | **0.898** | **0.559**    | **0.894** | **0.857** | 22 MB   |
+| RT-DETR     | 0.867     | 0.518        | 0.873     | 0.843     | 63 MB   |
 
 YOLOv8s gives the best accuracy overall. YOLOv5n is within half a point of it at
 a quarter of the size, which makes it the sensible choice for edge deployment.
@@ -40,7 +40,7 @@ Ultralytics may download additional support files.
 
 ## How it works
 
-Detection alone does not say whether a *worker* is compliant — the model returns
+Detection alone does not say whether a _worker_ is compliant — the model returns
 helmets, vests and heads as independent boxes with no notion of which belongs to
 whom. The app links them using a head-anchored geometric heuristic:
 
@@ -55,12 +55,12 @@ whom. The app links them using a head-anchored geometric heuristic:
 Each worker scores 100 (COMPLIANT), 50 (PARTIAL) or 0 (NON-COMPLIANT). The site
 score is the mean, mapped to a risk band:
 
-| Score | Risk |
-|---|---|
-| ≥ 90 | LOW |
+| Score | Risk     |
+| ----- | -------- |
+| ≥ 90  | LOW      |
 | 70–89 | MODERATE |
-| 40–69 | HIGH |
-| < 40 | CRITICAL |
+| 40–69 | HIGH     |
+| < 40  | CRITICAL |
 
 ## Project layout
 
@@ -98,6 +98,5 @@ The dataset itself is not included in this repository.
 
 ## Author
 
-Prayush Bahadur Shrestha — 25717671
-University of Technology Sydney
-Deep Learning and Convolutional Neural Networks — Assignment 3
+Prayush Shrestha —
+Deep Learning and Convolutional Neural Networks
